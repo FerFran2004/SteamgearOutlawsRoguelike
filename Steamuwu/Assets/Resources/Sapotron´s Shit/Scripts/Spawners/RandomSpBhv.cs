@@ -43,7 +43,7 @@ public class RandomSpBhv : MonoBehaviour
         
     }
 
-   public void CalculateEvents()
+   public void CalculateEvents() //NOT CURRENTLY ACTIVATED
     {
 
         int calc_dropChance = Random.Range(0, 101);

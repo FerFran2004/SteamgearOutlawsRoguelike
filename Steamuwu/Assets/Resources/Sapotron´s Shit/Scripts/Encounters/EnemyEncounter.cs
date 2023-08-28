@@ -8,12 +8,15 @@ public class EnemyEncounter : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     
     void Update()
     {
         
+ 
+
     }
+
 }

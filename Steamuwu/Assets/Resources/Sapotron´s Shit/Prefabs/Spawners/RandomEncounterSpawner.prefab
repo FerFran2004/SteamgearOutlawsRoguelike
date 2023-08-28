@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8177216427696541181}
   - component: {fileID: 6967450506305473472}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RandomEncounterSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -50,6 +50,9 @@ MonoBehaviour:
     spawnRarity: 10
   - Name: Shop
     Encounter: {fileID: 2445111839189755398, guid: 5980299d0413f1642a3ebce156ceef1c, type: 3}
+    spawnRarity: 15
+  - Name: Ocurrence
+    Encounter: {fileID: 6585820719577573589, guid: 6a87f645391ab0b4ca7cc14708d40cf4, type: 3}
     spawnRarity: 20
   - Name: Police
     Encounter: {fileID: 7153692402663028296, guid: 6d73192d6b107f84f9adef866a27f417, type: 3}
