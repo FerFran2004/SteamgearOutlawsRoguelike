@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class EButtonBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [Header ("PLACE HERE THE CHILD TEXT OF THIS BUTTON")]
+    public TMP_Text BtnEncounterText;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        //BtnEncounterText = "Hello";
     }
 }
