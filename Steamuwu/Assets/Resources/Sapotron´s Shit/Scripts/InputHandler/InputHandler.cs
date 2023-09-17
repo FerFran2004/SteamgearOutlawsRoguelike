@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class InputHandler : MonoBehaviour
 {
-    private Camera MainCamera;
-    private GameObject PlayerRef;
-    private Vector3 TargetRefPos;
-    private Vector3 PlayerRefPos;
-    private bool BlockedRef;
-    private bool Move;
-    private bool isMoving;
+    private Camera m_MainCamera;
+    private GameObject m_PlayerRef;
+    private Vector3 m_TargetRefPos;
+    private Vector3 m_PlayerRefPos;
+    private bool m_BlockedRef;
+    private bool m_Move;
+    private bool m_isMoving;
 
     [Header("NOT TOUCHING PLS")]
     [SerializeField] private GameObject EnemyRef;
@@ -21,51 +19,46 @@ public class InputHandler : MonoBehaviour
 
     private void Awake()
     {
-        MainCamera = Camera.main;
-
-
-        PlayerRef = GameObject.FindGameObjectWithTag("Player");
-
+       m_MainCamera = Camera.main;
+       m_PlayerRef = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
-        PlayerRefPos = PlayerRef.transform.position;
-
+        m_PlayerRefPos = m_PlayerRef.transform.position;
     }
 
     public void OnClick(InputAction.CallbackContext context)
     {
         if (!context.started) return;
 
-        var rayHit = Physics2D.GetRayIntersection(MainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        if (!rayHit.collider)
-        {
-            return;
+        var rayHit = Physics2D.GetRayIntersection(m_MainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()));
+        if (!rayHit.collider) return;
 
-        }
-        if (PlayerRefPos == TargetRefPos) //CONSTANTLY CHECK IF THE PLAYER ISNT AT THE SAME POSITION AS ITS TARGET
+        if (m_PlayerRefPos == m_TargetRefPos) //CONSTANTLY CHECK IF THE PLAYER ISNT AT THE SAME POSITION AS ITS TARGET
         {
             Debug.Log("Arrived at Target");
-            isMoving = false;
+            m_isMoving = false;
         }
         //MOVE PLAYER IN THE OVERWORLD
         if (rayHit.collider && rayHit.collider.tag == "Encounter") //IF THE CLICK IS A ENCOUNTER...
         {
-            BlockedRef = rayHit.collider.GetComponent<GeneralEncounterBehaviour>().Blocked;
+            m_BlockedRef = rayHit.collider.GetComponent<GeneralEncounterBehaviour>().Blocked;
 
-            if (BlockedRef == false) 
+            if (m_BlockedRef == false) 
             {
-                if (isMoving == false) //IF THE PLAYER IS NOT MOVING...
+                if (m_isMoving == false) //IF THE PLAYER IS NOT MOVING...
                 {
-                    TargetRefPos = rayHit.collider.transform.position;
-
+                    m_TargetRefPos = rayHit.collider.transform.position;
                 }
-                if (PlayerRefPos != TargetRefPos) //IF THE PLAYER HASNT REACHED ITS TARGET...
+                if (m_PlayerRefPos != m_TargetRefPos) //IF THE PLAYER HASNT REACHED ITS TARGET...
                 {
-                    isMoving = true;
-                    PlayerRef.GetComponent<PlayerOverworldMovement>().Move();
-                    PlayerRef.GetComponent<PlayerOverworldMovement>().TargetPos(TargetRefPos);
+                    m_isMoving = true;
+                    var moveComp = m_PlayerRef.GetComponent<PlayerOverworldMovement>();
+                    moveComp.Move();
+                    moveComp.TargetPos(m_TargetRefPos);
+                    //m_PlayerRef.GetComponent<PlayerOverworldMovement>().Move();
+                    //m_PlayerRef.GetComponent<PlayerOverworldMovement>().TargetPos(m_TargetRefPos);
                     Debug.Log(rayHit.collider.gameObject.name + rayHit.collider.gameObject.tag);
                     Debug.Log("DETECTED A ENCOUNTER");
                 }
@@ -74,8 +67,6 @@ public class InputHandler : MonoBehaviour
             {
                 Debug.Log("ENCOUNTER IS BLOCKED SOWWY UnU");
             }
-            
-
         }
 
     }
