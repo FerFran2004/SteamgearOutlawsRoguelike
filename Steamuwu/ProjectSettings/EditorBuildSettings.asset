@@ -8,4 +8,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: "Assets/Resources/Sapotron\xB4s Shit/Scenes/1stLeveTest/FullLevel/1stMap.unity"
+    guid: b66a5f914b85bf04cac166891f272c5f
+  - enabled: 1
+    path: "Assets/Resources/Sapotron\xB4s Shit/Scenes/1stLeveTest/Enemy.unity"
+    guid: 8a8947003bed16f4b988a5074d91a45a
+  - enabled: 1
+    path: "Assets/Resources/Sapotron\xB4s Shit/Scenes/1stLeveTest/Police.unity"
+    guid: 46ae7ecf63389e84ebb119ed069040d4
+  - enabled: 1
+    path: "Assets/Resources/Sapotron\xB4s Shit/Scenes/1stLeveTest/Shop.unity"
+    guid: aeaf930ca9478cb45b76ba797479b9a2
+  - enabled: 1
+    path: "Assets/Resources/Sapotron\xB4s Shit/Scenes/1stLeveTest/Casino.unity"
+    guid: 8ca13a86bed72a34881af81a4b4d782d
+  - enabled: 1
+    path: "Assets/Resources/Sapotron\xB4s Shit/Scenes/1stLeveTest/Boss.unity"
+    guid: 1b703bc7bc4196b40a7a3909c65cd3ec
+  - enabled: 1
+    path: "Assets/Resources/Sapotron\xB4s Shit/Scenes/1stLeveTest/Ocurrence.unity"
+    guid: 2a642696031d41649a9ef1a50de5084d
   m_configObjects: {}

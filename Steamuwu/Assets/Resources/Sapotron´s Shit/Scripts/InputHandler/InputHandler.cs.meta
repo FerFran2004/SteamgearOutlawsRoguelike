@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8fe0dc7ad4136aa4ea9522aa8e8e6a8a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - EnemyRef: {fileID: 8018759393099114014, guid: 0fadc92ade3734c4eadc4f59ea0af47e, type: 3}
+  - ShopRef: {fileID: 7153692402663028296, guid: 6d73192d6b107f84f9adef866a27f417, type: 3}
+  - PoliceRef: {fileID: 2445111839189755398, guid: 5980299d0413f1642a3ebce156ceef1c, type: 3}
+  - CasinoRef: {fileID: 2808013130512889873, guid: 35edbef6e193a264daeb23e391aee628, type: 3}
+  - BossRef: {fileID: 1190681089934940708, guid: bfe57dbccafceb04aa813fdd9d0a7c7b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
